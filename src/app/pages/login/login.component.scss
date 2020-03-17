@@ -1,0 +1,32 @@
+.login-container {
+    height: 100vh;
+    width: 100%;
+    background: #f1f4f9 url('../../../assets/images/login_background.svg') no-repeat ;
+    background-size: contain;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__content-box {
+        width: 400px;
+        min-height: 450px;
+    }
+
+    &__logo-box {
+        text-align: center;
+
+        .logo-img {
+            height: 57px;
+            width: 338px;
+        }
+    }
+
+    .login-btn {
+        margin-top: 20px;
+
+        &:hover {
+            background-color: #dc1e34;
+            border-color: #dc1e34;
+        }
+    }
+}

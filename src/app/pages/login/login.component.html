@@ -1,0 +1,38 @@
+<section class="login-container">
+    <br/><br/>
+    <div class="login-container__content-box">
+        <div class="login-container__logo-box">
+            <a href="https://www.pacteraedge.com/" target="__blank">
+                <img src="../../../assets/images/logo_pactera_blue.png" class="logo-img"/>
+            </a>
+        </div>
+        <br /><br />
+        <div class="login-container__signin-form">
+            <form nz-form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+                <nz-form-item>
+                    <nz-form-control nzErrorTip="Please input username">
+                        <nz-input-group nzPrefixIcon="user" [nzSize]="'large'">
+                            <input type="text" nz-input formControlName="userName" placeholder="Username: padmin or puser" />
+                        </nz-input-group>
+                    </nz-form-control>
+                </nz-form-item>
+                <nz-form-item>
+                    <nz-form-control nzErrorTip="Please input password">
+                        <nz-input-group nzPrefixIcon="lock" [nzSize]="'large'">
+                            <input type="password" nz-input formControlName="password" placeholder="Password: padmin or puser" />
+                        </nz-input-group>
+                    </nz-form-control>
+                </nz-form-item>
+                <nz-form-item>
+                    <nz-form-control>
+                        <label nz-checkbox>
+                            <span>Remember me</span>
+                        </label>
+                        <a class="login-form-forgot" class="login-form-forgot right">Forgot password</a>
+                        <button nz-button [nzType]="'primary'" [nzSize]="'large'" nzBlock class="login-btn" [nzLoading]="loginLoading">Log in</button>
+                    </nz-form-control>
+                </nz-form-item>
+            </form>
+        </div>
+    </div>
+</section>

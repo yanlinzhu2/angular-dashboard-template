@@ -1,0 +1,78 @@
+<nz-layout class="app-layout">
+    <nz-sider class="menu-sidebar"
+              nzCollapsible
+              nzWidth="256px"
+              nzBreakpoint="md"
+              [(nzCollapsed)]="isCollapsed"
+              [nzTrigger]="null">
+      <div class="sidebar-logo">
+        <div *ngIf="!isCollapsed else smallLogoTemp">
+          <a href="https://www.pacteraedge.com/" target="_blank">
+            <img src="../assets/images/logo_pactera_white.png" class="long-logo" alt="logo">
+          </a>
+        </div>
+        <ng-template #smallLogoTemp>
+          <a href="https://www.pacteraedge.com/" target="_blank">
+            <img src="../assets/images/logo_pactera_small.png" class="small-logo" alt="logo">
+          </a>
+        </ng-template>
+      </div>
+      <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
+        <li nz-submenu nzTitle="Feature 1" nzIcon="appstore" [nzOpen]="true">
+          <ul>
+            <li nz-menu-item nzMatchRouter>
+              <a>Feature 1 subfeature</a>
+            </li>
+          </ul>
+        </li>
+         <li nz-submenu nzTitle="Feature 2" nzIcon="appstore">
+          <ul>
+            <li nz-menu-item nzMatchRouter>
+              <a>Feature 2 subfeature</a>
+            </li>
+          </ul>
+        </li>
+        <li nz-submenu nzTitle="Feature 3" nzIcon="appstore">
+          <ul>
+            <li nz-menu-item nzMatchRouter>
+              <a>Feature 3 subfeature</a>
+            </li>
+          </ul>
+        </li>
+        <li nz-submenu nzTitle="Setting" nzIcon="setting">
+          <ul>
+            <li nz-menu-item nzMatchRouter>
+              <a>Setting 1</a>
+            </li>
+            <li nz-menu-item nzMatchRouter>
+              <a>setting 2</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nz-sider>
+    <nz-layout>
+      <nz-header>
+        <div class="app-header">
+          <span class="header-trigger" (click)="isCollapsed = !isCollapsed">
+              <i class="trigger"
+                 nz-icon
+                 [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
+              ></i>
+          </span>
+          <div class="header-user">
+            <nz-avatar nzIcon="user" class="header-user__icon"></nz-avatar>
+            <span class="header-user__name">{{displayedName}}</span>
+          </div>
+        </div>
+      </nz-header>
+      <nz-content>
+        <div class="inner-content">
+          <router-outlet></router-outlet>
+        </div>
+      </nz-content>
+      <nz-footer class="center">
+        <strong>Angular v8.2.14 Dashboard Template</strong> Implement by Pactera Edge
+      </nz-footer>
+    </nz-layout>
+  </nz-layout>
