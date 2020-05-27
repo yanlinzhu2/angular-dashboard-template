@@ -5,6 +5,7 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
 import { SharedAntDesignModule } from '../../shared/ant-design.module';
 import { DashboardComponent } from './dashboard.component';
 import { FormsModule } from '@angular/forms';
+import { Feature1Component } from './feature1/feature1.component';
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import { FormsModule } from '@angular/forms';
   ],
   declarations: [
     DashboardComponent,
+    Feature1Component,
   ],
 })
 export class DashboardModule { }

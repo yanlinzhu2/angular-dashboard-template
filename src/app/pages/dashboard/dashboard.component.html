@@ -1,10 +1,10 @@
-<nz-layout class="app-layout">
+<nz-layout class="app-layout left-layout">
     <nz-sider class="menu-sidebar"
               nzCollapsible
               nzWidth="256px"
               nzBreakpoint="md"
               [(nzCollapsed)]="isCollapsed"
-              [nzTrigger]="null">
+              >
       <div class="sidebar-logo">
         <div *ngIf="!isCollapsed else smallLogoTemp">
           <a href="https://www.pacteraedge.com/" target="_blank">
@@ -21,7 +21,7 @@
         <li nz-submenu nzTitle="Feature 1" nzIcon="appstore" [nzOpen]="true">
           <ul>
             <li nz-menu-item nzMatchRouter>
-              <a>Feature 1 subfeature</a>
+              <a routerLink="feature_1">Feature 1 subfeature</a>
             </li>
           </ul>
         </li>
@@ -51,28 +51,32 @@
         </li>
       </ul>
     </nz-sider>
-    <nz-layout>
-      <nz-header>
+    <nz-layout class="right-layout">
+      <nz-header id="layout-header" [ngStyle]="isCollapsed ? {width: 'calc(100% - 80px)'} : {width: 'calc(100% - 256px)'}">
         <div class="app-header">
-          <span class="header-trigger" (click)="isCollapsed = !isCollapsed">
-              <i class="trigger"
-                 nz-icon
-                 [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
-              ></i>
-          </span>
-          <div class="header-user">
-            <nz-avatar nzIcon="user" class="header-user__icon"></nz-avatar>
-            <span class="header-user__name">{{displayedName}}</span>
-          </div>
+         <nz-row nzType="flex" nzAlign="middle" nzJustify="space-between">
+            <nz-col>
+              <span>Dashboard</span>
+            </nz-col>
+            <nz-col>
+              <nz-avatar nzIcon="user" class="header-user__icon"></nz-avatar>
+              <span class="header-user__name">{{displayedName}}</span>
+            </nz-col>
+          </nz-row>
         </div>
       </nz-header>
-      <nz-content>
-        <div class="inner-content">
+      <nz-content class="right-layout__content">
+        <!-- <div class="inner-content"> -->
           <router-outlet></router-outlet>
-        </div>
+        <!-- </div> -->
+        <nz-footer>
+          <div>
+            <strong>FinWhiz</strong> Implemented by EASCE team
+          </div>
+          <div>
+            © 2020 Pactera Edge. All rights reserved.
+          </div>
+        </nz-footer>
       </nz-content>
-      <nz-footer class="center">
-        <strong>Angular v9.1.9 Dashboard Template</strong> Implement by Pactera Edge
-      </nz-footer>
     </nz-layout>
   </nz-layout>

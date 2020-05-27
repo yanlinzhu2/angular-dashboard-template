@@ -9,6 +9,7 @@ import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzAvatarModule } from 'ng-zorro-antd/avatar';
 import { NzMessageModule } from 'ng-zorro-antd/message';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
+import { NzCardModule } from 'ng-zorro-antd/card';
 import { NZ_I18N, en_US } from 'ng-zorro-antd';
 
 @NgModule({
@@ -23,7 +24,8 @@ import { NZ_I18N, en_US } from 'ng-zorro-antd';
       NzInputModule,
       NzAvatarModule,
       NzMessageModule,
-      NzCheckboxModule
+      NzCheckboxModule,
+      NzCardModule
     ],
     providers: [{ provide: NZ_I18N, useValue: en_US }],
 })
