@@ -1,6 +1,6 @@
-# Angular v8.2.14 Dashboard Template
+# Angular v9.1.9 Dashboard Template
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.25.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.9.
 
 ## Installation
 Run `npm install` to install all the project dependencies.
